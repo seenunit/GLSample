@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C9D9AEA8-35A1-4288-A9A6-2C4796386D35}</ProjectGuid>
+    <RootNamespace>GLSample</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.27625.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>false</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\src\Graphics;..\src\GLSample;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>false</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\Graphics;..\GLSample;$(ALGLIB)\Matrix\Matrix Inverse\matrx.inv.cpp;$(ALGLIB)\Matrix\Matrix Inverse\matrx.inv.cpp\libs;$(PARASOLID22.0)\WIN32\base;$(ODXPS_SOURCE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\Graphics\Bezier.cpp" />
+    <ClCompile Include="..\src\Graphics\BSpline.cpp" />
+    <ClCompile Include="..\src\Graphics\BSplineDlg.cpp" />
+    <ClCompile Include="..\src\Graphics\Circle.cpp" />
+    <ClCompile Include="..\src\Graphics\CMath.cpp" />
+    <ClCompile Include="..\src\Graphics\CubicSpline.cpp" />
+    <ClCompile Include="..\src\Graphics\CubicSplineDlg.cpp" />
+    <ClCompile Include="..\src\Graphics\Ellipse.cpp" />
+    <ClCompile Include="..\src\Graphics\GeomEntity.cpp" />
+    <ClCompile Include="..\src\Graphics\Grid.cpp" />
+    <ClCompile Include="..\src\Graphics\Line.cpp" />
+    <ClCompile Include="..\src\Graphics\MainFrm.cpp" />
+    <ClCompile Include="..\src\Graphics\MatDialog.cpp" />
+    <ClCompile Include="..\src\Graphics\Matrix.cpp" />
+    <ClCompile Include="..\src\Graphics\SampleMath.cpp" />
+    <ClCompile Include="..\src\Graphics\Vector.cpp" />
+    <ClCompile Include="..\src\GLSample\BSplineFitDlg.cpp" />
+    <ClCompile Include="..\src\GLSample\BSurf.cpp" />
+    <ClCompile Include="..\src\GLSample\DataFormView.cpp" />
+    <ClCompile Include="..\src\GLSample\DataView.cpp" />
+    <ClCompile Include="..\src\GLSample\FemBeam.cpp" />
+    <ClCompile Include="..\src\GLSample\FemBeamDlg.cpp" />
+    <ClCompile Include="..\src\GLSample\GLSample.cpp" />
+    <ClCompile Include="..\src\GLSample\GLSampleDoc.cpp" />
+    <ClCompile Include="..\src\GLSample\GLSampleView.cpp" />
+    <ClCompile Include="..\src\GLSample\MainFrm.cpp" />
+    <ClCompile Include="..\src\GLSample\stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\Graphics\Bezier.h" />
+    <ClInclude Include="..\src\Graphics\BSpline.h" />
+    <ClInclude Include="..\src\Graphics\BSplineDlg.h" />
+    <ClInclude Include="..\src\Graphics\Circle.h" />
+    <ClInclude Include="..\src\Graphics\CMath.h" />
+    <ClInclude Include="..\src\Graphics\CubicSpline.h" />
+    <ClInclude Include="..\src\Graphics\cubicsplinedlg.h" />
+    <ClInclude Include="..\src\Graphics\Ellipse.h" />
+    <ClInclude Include="..\src\Graphics\GeomEntity.h" />
+    <ClInclude Include="..\src\Graphics\Grid.h" />
+    <ClInclude Include="..\src\Graphics\Line.h" />
+    <ClInclude Include="..\src\Graphics\MainFrm.h" />
+    <ClInclude Include="..\src\Graphics\MatDialog.h" />
+    <ClInclude Include="..\src\Graphics\Matrix.h" />
+    <ClInclude Include="..\src\Graphics\Options.h" />
+    <ClInclude Include="..\src\Graphics\resource.h" />
+    <ClInclude Include="..\src\Graphics\SampleMath.h" />
+    <ClInclude Include="..\src\Graphics\Vector.h" />
+    <ClInclude Include="..\src\GLSample\BSplineFitDlg.h" />
+    <ClInclude Include="..\src\GLSample\BSurf.h" />
+    <ClInclude Include="..\src\GLSample\DataFormView.h" />
+    <ClInclude Include="..\src\GLSample\DataView.h" />
+    <ClInclude Include="..\src\GLSample\FemBeam.h" />
+    <ClInclude Include="..\src\GLSample\FemBeamDlg.h" />
+    <ClInclude Include="..\src\GLSample\GLSample.h" />
+    <ClInclude Include="..\src\GLSample\GLSampleDefs.h" />
+    <ClInclude Include="..\src\GLSample\GLSampleDoc.h" />
+    <ClInclude Include="..\src\GLSample\GLSampleView.h" />
+    <ClInclude Include="..\src\GLSample\MainFrm.h" />
+    <ClInclude Include="..\src\GLSample\Parasolid.h" />
+    <ClInclude Include="..\src\GLSample\Resource.h" />
+    <ClInclude Include="..\src\GLSample\stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\src\GLSample\res\GLSample.ico" />
+    <Image Include="..\src\GLSample\res\GLSampleDoc.ico" />
+    <Image Include="..\src\GLSample\res\Toolbar.bmp" />
+    <Image Include="..\src\GLSample\res\ViewOperation.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\src\GLSample\GLSample.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\src\GLSample\res\GLSample.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\src\Graphics\ReadMe.txt" />
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="..\src\GLSample\GLSample.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
