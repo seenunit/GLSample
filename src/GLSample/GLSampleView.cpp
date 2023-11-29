@@ -134,6 +134,72 @@ BOOL CGLSampleView::PreCreateWindow(CREATESTRUCT& cs)
 	return CView::PreCreateWindow(cs);
 }
 
+void Tetrahedron()
+{
+	glClear(GL_COLOR_BUFFER_BIT);
+
+	// Draw the tetrahedron.  It is a four sided figure, so when defining it
+	// with a triangle strip we have to repeat the last two vertices.
+	glBegin(GL_TRIANGLE_STRIP);
+		glColor3f(1, 1, 1); glVertex3f(0, 2, 0);
+		glColor3f(1, 0, 0); glVertex3f(-1, 0, 1);
+		glColor3f(0, 1, 0); glVertex3f(1, 0, 1);
+		glColor3f(0, 0, 1); glVertex3f(0, 0, -1.4);
+		glColor3f(1, 1, 1); glVertex3f(0, 2, 0);
+		glColor3f(1, 0, 0); glVertex3f(-1, 0, 1);
+	glEnd();
+
+}
+
+void CreatePolygon()
+{
+	glPolygonMode(GL_FRONT, GL_LINE);
+	glPolygonMode(GL_BACK, GL_LINE);
+
+	glColor3f(0.0, 1.0, 0.0); /* green */
+
+	glBegin(GL_POLYGON);
+	glEdgeFlag(GL_TRUE);
+	glNormal3d(0.0, 0.0, 1.0);
+	glVertex3d(1.0, 0.0, 0.0);
+	glVertex3d(2.0, 1.0, 0.0);
+	glVertex3d(2.0, 3.0, 0.0);
+	glVertex3d(1.0, 2.0, 0.0);
+	glVertex3d(0.0, 3.0, 0.0);
+	glVertex3d(0.0, 1.0, 0.0);
+	glEdgeFlag(GL_FALSE);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0.0, 1.0, 0.0); /* green */
+	glVertex3d(0,0,0);
+	glColor3f(1.0, 1.0, 0.0); /* yellow */
+	glVertex3d(1,0,0);
+	glColor3f(1.0, 0.0, 0.0); /* red */
+	glVertex3d(1,1,0);
+	glColor3f(0.0, 0.0, 1.0); /* blue */
+	glVertex3d(0,1,0);
+	glEnd();
+
+	glFrontFace(GL_CW);
+	glCullFace(GL_BACK);
+	glEnable(GL_CULL_FACE);
+
+	glBegin(GL_POLYGON);
+	glColor3f(0.0, 1.0, 0.0); /* green */
+	glVertex3d(0,0,0);
+	glColor3f(1.0, 1.0, 0.0); /* yellow */
+	glVertex3d(0,0,-1);
+	glColor3f(1.0, 0.0, 0.0); /* red */
+	glVertex3d(0,1,-1);
+	glColor3f(0.0, 0.0, 1.0); /* blue */
+	glVertex3d(0,1,0);
+	glEnd();
+
+	glDisable(GL_CULL_FACE);
+	glFrontFace(GL_CCW);
+}
+
 // CGLSampleView drawing
 
 void CGLSampleView::OnDraw(CDC* pDC)
@@ -150,58 +216,10 @@ void CGLSampleView::OnDraw(CDC* pDC)
 	//PrepareScene();
 	//void CreatePolygon();
 	//CreatePolygon();
+	Tetrahedron();
 
 	glFlush();
 	SwapBuffers(pDC->m_hDC);
-}
-
-void CreatePolygon()
-{
-	glPolygonMode(GL_FRONT, GL_LINE);
-	glPolygonMode(GL_BACK, GL_LINE);
-
-	glColor3f(0.0, 1.0, 0.0); /* green */
-
-	glBegin(GL_POLYGON);
-	glEdgeFlag(GL_TRUE);
-	glNormal3d(0.0,0.0,1.0);
-	glVertex3d(1.0,0.0,0.0);
-	glVertex3d(2.0,1.0,0.0);
-	glVertex3d(2.0,3.0,0.0);
-	glVertex3d(1.0,2.0,0.0);
-	glVertex3d(0.0,3.0,0.0);
-	glVertex3d(0.0,1.0,0.0);
-	glEdgeFlag(GL_FALSE);
-	glEnd();
-
-	//glBegin(GL_POLYGON);
-	//glColor3f(0.0, 1.0, 0.0); /* green */
-	//glVertex3d(0,0,0);
-	//glColor3f(1.0, 1.0, 0.0); /* yellow */
-	//glVertex3d(1,0,0);
-	//glColor3f(1.0, 0.0, 0.0); /* red */
-	//glVertex3d(1,1,0);
-	//glColor3f(0.0, 0.0, 1.0); /* blue */
-	//glVertex3d(0,1,0);
-	//glEnd();
-
-	//glFrontFace(GL_CW);
-	//glCullFace(GL_BACK);
-	//glEnable(GL_CULL_FACE);
-
-	//glBegin(GL_POLYGON);
-	//glColor3f(0.0, 1.0, 0.0); /* green */
-	//glVertex3d(0,0,0);
-	//glColor3f(1.0, 1.0, 0.0); /* yellow */
-	//glVertex3d(0,0,-1);
-	//glColor3f(1.0, 0.0, 0.0); /* red */
-	//glVertex3d(0,1,-1);
-	//glColor3f(0.0, 0.0, 1.0); /* blue */
-	//glVertex3d(0,1,0);
-	//glEnd();
-
-	//glDisable(GL_CULL_FACE);
-	//glFrontFace(GL_CCW);
 }
 
 // CGLSampleView printing

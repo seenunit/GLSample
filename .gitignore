@@ -49,9 +49,11 @@ ipch
 *.suo
 *.opensdf
 *.aps
+.vs/
 
 # backup files
 *.bak
+*.VC.db
 /.cov/analysisConfigurations.config
 /.cov/coverity.config
 /.vs/DesignWorld/v15/Solution.VC.db-wal
